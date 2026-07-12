@@ -2,6 +2,9 @@
 
 An end-to-end Machine Learning web application that classifies uploaded images of animals into either **Buffalo** or **Cattle**.
 
+### 🌐 [Live Demo URL: https://your-app-name.onrender.com]
+*(Once your Render deployment is finished, update this link to your actual Render URL!)*
+
 ## Overview
 This project predicts whether a given image contains cattle or a buffalo. It was built completely from scratch over three major modules:
 1. **Data Processing**: Extracting and transforming images for training (Data Augmentation using `torchvision.transforms`).
