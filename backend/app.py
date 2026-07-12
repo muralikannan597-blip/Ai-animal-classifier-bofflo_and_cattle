@@ -5,7 +5,6 @@ import torch.nn as nn
 from torchvision import models, transforms
 from PIL import Image
 import io
-
 import os
 
 # Point Flask to the frontend directory so it can serve the UI!
@@ -27,7 +26,12 @@ num_features = model.fc.in_features
 model.fc = nn.Linear(num_features, 2) # 2 classes: buffalo and cattle
 
 # 2. Load your newly trained "brain" into the architecture
-model.load_state_dict(torch.load('livestock_model.pth', map_location=device, weights_only=True))
+# Handle both local and production paths
+model_path = 'livestock_model.pth'
+if not os.path.exists(model_path):
+    model_path = os.path.join(os.path.dirname(__file__), 'livestock_model.pth')
+
+model.load_state_dict(torch.load(model_path, map_location=device, weights_only=True))
 model.eval() # Lock the model into "evaluation" mode so it doesn't try to learn
 
 class_names = ['buffalo', 'cattle'] # The order matches your training data
@@ -70,5 +74,7 @@ def predict():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    print("Server is starting! Waiting for images...")
-    app.run(debug=True, port=5000)
+    # Get port from environment variable or default to 5000 for local development
+    port = int(os.environ.get('PORT', 5000))
+    print(f"Server is starting on port {port}! Waiting for images...")
+    app.run(debug=False, host='0.0.0.0', port=port)
