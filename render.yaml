@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: ai-animal-classifier
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: gunicorn -w 1 -b 0.0.0.0:$PORT backend.app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
