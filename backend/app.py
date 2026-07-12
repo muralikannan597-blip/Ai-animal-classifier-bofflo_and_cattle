@@ -6,7 +6,16 @@ from torchvision import models, transforms
 from PIL import Image
 import io
 
-app = Flask(__name__)
+import os
+
+# Point Flask to the frontend directory so it can serve the UI!
+frontend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'frontend'))
+app = Flask(__name__, static_folder=frontend_dir, static_url_path='/')
+
+@app.route('/')
+def serve_frontend():
+    return app.send_static_file('index.html')
+
 CORS(app) # Allows your frontend HTML to communicate with this backend
 
 print("Loading AI Model...")
