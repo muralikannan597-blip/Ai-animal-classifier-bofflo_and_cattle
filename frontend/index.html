@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Livestock Predictor</title>
+    <!-- Modern premium font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Animated Blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    
+    <div class="container glass-panel">
+        <div class="header">
+            <h1>AI Livestock Identifier</h1>
+            <p class="subtitle">Upload a picture to determine if it is a Cattle or a Buffalo.</p>
+        </div>
+        
+        <!-- Upload Area -->
+        <div id="upload-area" class="upload-area">
+            <input type="file" id="file-input" accept="image/*" hidden>
+            <div class="upload-icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="icon" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+                </svg>
+            </div>
+            <p>Drag and drop image here or <span class="highlight">browse</span></p>
+        </div>
+        
+        <!-- Preview and CTA -->
+        <div id="preview-container" class="hidden">
+            <div class="image-wrapper">
+                <img id="image-preview" src="" alt="Preview">
+            </div>
+            <button id="analyze-btn" class="btn primary-btn">
+                <span>Analyze with AI</span>
+            </button>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p class="pulsate">AI is processing the image...</p>
+        </div>
+
+        <!-- Result -->
+        <div id="result-box" class="hidden final-result glass-inner">
+            <h3 class="result-title">Prediction Result</h3>
+            <div id="prediction-text" class="prediction-text">...</div>
+            <button id="reset-btn" class="btn secondary-btn">Try Another Image</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
