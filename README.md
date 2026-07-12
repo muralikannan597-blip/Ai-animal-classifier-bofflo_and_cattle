@@ -2,7 +2,7 @@
 
 An end-to-end Machine Learning web application that classifies uploaded images of animals into either **Buffalo** or **Cattle**.
 
-### 🌐 [Live Demo URL: https://ai-animal-classifier-bofflo-and-cattle.onrender.com]
+### 🌐 [Live Demo URL: localhost:8080]
 *(Please note: It may take up to 2-3 minutes for the free Render server to wake up on the first request!)*
 
 ## Overview
