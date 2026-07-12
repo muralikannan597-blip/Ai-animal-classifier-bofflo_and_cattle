@@ -2,8 +2,8 @@
 
 An end-to-end Machine Learning web application that classifies uploaded images of animals into either **Buffalo** or **Cattle**.
 
-### 🌐 [Live Demo URL: https://your-app-name.onrender.com]
-*(Once your Render deployment is finished, update this link to your actual Render URL!)*
+### 🌐 [Live Demo URL: https://ai-animal-classifier-bofflo-and-cattle.onrender.com]
+*(Please note: It may take up to 2-3 minutes for the free Render server to wake up on the first request!)*
 
 ## Overview
 This project predicts whether a given image contains cattle or a buffalo. It was built completely from scratch over three major modules:
