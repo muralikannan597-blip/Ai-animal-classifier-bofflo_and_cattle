@@ -41,4 +41,4 @@ python -m http.server 8080
 The AI engine runs on `livestock_model.pth`. It was fine-tuned for 5 epochs on CPU and exhibits incredible validation accuracy in differentiating between the two species.
 
 ---
-*Built with ❤️ and AI.*
+*Built with ❤️.*
